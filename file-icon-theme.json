@@ -1,0 +1,14 @@
+{
+  "iconDefinitions": {
+    "gaboscript-file-icon": {
+      "iconPath": "./gabo-icon.png" 
+    },
+    "docx-file-icon": {
+      "iconPath": "./docx-icon.png" 
+    }
+  },
+  "fileExtensions": {
+    "gabo": "gaboscript-file-icon",
+    "docx": "docx-file-icon" 
+  }
+}

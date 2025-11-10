@@ -1,0 +1,86 @@
+{
+    "name": "gaboscript",
+    "displayName": "GaboScript",
+    "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis y autocompletado.",
+    "version": "0.0.4",
+    "publisher": "Las Nuevas Victimas De Elecentro",
+    "icon": "GS.png",
+    "engines": {
+        "vscode": "^1.105.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "main": "./extension.js",
+    "activationEvents": [
+        "onLanguage:gaboscript",
+        "onCommand:gaboscript.exportarADOCX"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "gaboscript",
+                "aliases": [
+                    "GaboScript",
+                    "gaboscript"
+                ],
+                "extensions": [
+                    ".gabo"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gaboscript",
+                "scopeName": "source.gaboscript",
+                "path": "./syntaxes/gaboscript.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "gaboscript",
+                "path": "./snippets/gaboscript.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "gaboscript.exportarADOCX",
+                "title": "Exportar a DOCX",
+                "category": "GaboScript",
+                "icon": {
+                    "light": "./icons/docx-export.svg",
+                    "dark": "./icons/docx-export.svg"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "gaboscript.exportarADOCX",
+                    "group": "navigation",
+                    "when": "resourceExtName == .gabo"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "gaboscript.exportarADOCX",
+                    "group": "navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "gaboscript.exportarADOCX",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "iconThemes": [
+            {
+                "id": "gaboscript-icon",
+                "label": "GaboScript Icon",
+                "path": "./file-icon-theme.json"
+            }
+        ]
+    }
+}
