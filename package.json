@@ -82,5 +82,8 @@
                 "path": "./file-icon-theme.json"
             }
         ]
+    },
+    "dependencies": {
+        "docx": "9.5.1"
     }
 }
