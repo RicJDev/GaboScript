@@ -8,10 +8,10 @@
     "repository": {
         "punctuation": {
             "patterns": [
-                { "name": "punctuation.separator.key-value.gaboscript", "match": "[:]" },
-                { "name": "meta.separator.parameter.gaboscript", "match": "," },
-                { "name": "meta.brace.round.gaboscript", "match": "[()]" },
-                { "name": "meta.brace.square.gaboscript", "match": "[\\[\\]]" }
+                { "name": "punctuation.separator.key-value.gabo", "match": "[:]" },
+                { "name": "meta.separator.parameter.gabo", "match": "," },
+                { "name": "meta.brace.round.gabo", "match": "[()]" },
+                { "name": "meta.brace.square.gabo", "match": "[\\[\\]]" }
             ]
         },
 
@@ -20,30 +20,31 @@
                 { "include": "#punctuation" },
                 { "include": "#literals" },
                 { "include": "#keywords" },
-                { "include": "#identifiers" }
+                { "include": "#identifiers" },
+				{ "include": "#function_call" }
             ]
         },
 
         "declarations": {
             "patterns": [
                 {
-                    "name": "variable.declaration.program.gaboscript",
+                    "name": "variable.declaration.program.gabo",
                     "match": "(?i)(\\bAlgoritmo\\b)\\s*(.*)",
                     "captures": {
-                        "1": { "name": "keyword.other.gaboscript" },
-                        "2": { "name": "entity.name.function.gaboscript" }
+                        "1": { "name": "keyword.other.gabo" },
+                        "2": { "name": "entity.name.function.gabo" }
                     }
                 },
                 {
-                    "name": "entity.name.function.gaboscript",
+                    "name": "entity.name.function.gabo",
                     "begin": "\\b(?i:(Funcion|Procedimiento))\\b\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
                     "end": "\\)",
                     "beginCaptures": {
-                        "1": { "name": "keyword.other.gaboscript" },
-                        "2": { "name": "entity.name.function.gaboscript" }
+                        "1": { "name": "keyword.other.gabo" },
+                        "2": { "name": "entity.name.function.gabo" }
                     },
                     "endCaptures": {
-                        "1": { "name": "punctuation.definition.parameters.end.gaboscript" }
+                        "1": { "name": "punctuation.definition.parameters.end.gabo" }
                     },
                     "patterns": [{ "include": "#expressions" }, { "include": "$self" }]
                 }
@@ -51,51 +52,29 @@
         },
 
         "function_call": {
-            "name": "entity.name.function.call.gaboscript",
+            "name": "entity.name.function.call.gabo",
             "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*\\()"
         },
 
-        "array_access": {
-            "begin": "\\[",
-            "beginCaptures": {
-                "0": {
-                    "name": "meta.brace.square.gaboscript"
-                }
-            },
-            "end": "]",
-            "endCaptures": {
-                "0": {
-                    "name": "meta.brace.square.gaboscript"
-                }
-            },
-            "name": "meta.array.literal.gaboscript",
-            "patterns": [
-                { "include": "#comments" },
-                { "include": "#numbers" },
-                { "include": "#identifiers" },
-                { "include": "$self" }
-            ]
-        },
-
         "identifiers": {
-            "name": "variable.other.gaboscript",
+            "name": "variable.other.gabo",
             "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
 
         "types": {
             "patterns": [
                 {
-                    "name": "entity.name.type.gaboscript",
+                    "name": "entity.name.type.gabo",
                     "match": "(?i)\\b(entero|cadena|booleano|real|caracter)\\b"
                 },
 				{
 					"match": "(?i)(E/S|E|S)(:)",
 					"captures": {
 						"1": {
-							"name": "entity.name.type.gaboscript"
+							"name": "entity.name.type.gabo"
 						},
 						"2": {
-							"name": "punctuation.separator.key-value.gaboscript"
+							"name": "punctuation.separator.key-value.gabo"
 						}
 					}
 				}
@@ -105,23 +84,23 @@
         "operators": {
             "patterns": [
                 {
-                    "name": "support.function.gaboscript",
+                    "name": "support.function.gabo",
                     "match": "(?i)\\b(Mostrar|Leer)\\b"
                 },
                 {
-                    "name": "keyword.operator.assignment.gaboscript",
+                    "name": "keyword.operator.assignment.gabo",
                     "match": "<<|\\="
                 },
                 {
-                    "name": "keyword.operator.arithmetic.gaboscript",
+                    "name": "keyword.operator.arithmetic.gabo",
                     "match": "[\\^+\\-*/%]"
                 },
                 {
-                    "name": "keyword.operator.comparison.gaboscript",
+                    "name": "keyword.operator.comparison.gabo",
                     "match": "[=<>]|==|!=|<=|>="
                 },
                 {
-                    "name": "keyword.operator.logical.gaboscript",
+                    "name": "keyword.operator.logical.gabo",
                     "match": "(?i)\\b(And|Or)\\b"
                 }
             ]
@@ -130,11 +109,11 @@
         "keywords": {
             "patterns": [
                 {
-                    "name": "keyword.control.gaboscript",
+                    "name": "keyword.control.gabo",
                     "match": "(?i)\\b(Si|Entonces|Fin_Si|Sino|Para|Hacer|Fin_Para|Repetir|Hasta|Mientras|Fin_Mientras|En_Caso|Sea|Fin_Caso|Caso|Otro_Caso|Devolver|Fin_Repetir)\\b"
                 },
                 {
-                    "name": "keyword.other.gaboscript",
+                    "name": "keyword.other.gabo",
                     "match": "(?i)\\b(Algoritmo|Inicio|Fin|Procedimiento|Fin_Procedimiento|Funcion|Fin_Funcion|Registro|Fin_Registro|var)\\b"
                 },
                 { "include": "#types" },
@@ -145,15 +124,15 @@
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.block.gaboscript",
+                    "name": "comment.block.gabo",
                     "begin": "/\\*",
                     "end": "\\*/",
                     "captures": {
-                        "0": { "name": "punctuation.definition.comment.gaboscript" }
+                        "0": { "name": "punctuation.definition.comment.gabo" }
                     }
                 },
                 {
-                    "name": "comment.line.double-slash.gaboscript",
+                    "name": "comment.line.double-slash.gabo",
                     "match": "//.*$"
                 }
             ]
@@ -162,10 +141,10 @@
         "strings": {
             "patterns": [
                 {
-                    "name": "string.quoted.double.gaboscript",
+                    "name": "string.quoted.double.gabo",
                     "begin": "\"",
                     "end": "\"",
-                    "patterns": [{ "name": "constant.character.escape.gaboscript", "match": "\\\\." }]
+                    "patterns": [{ "name": "constant.character.escape.gabo", "match": "\\\\." }]
                 }
             ]
         },
@@ -173,7 +152,7 @@
         "numbers": {
             "patterns": [
                 {
-                    "name": "constant.numeric.gaboscript",
+                    "name": "constant.numeric.gabo",
                     "match": "\\b\\d+(\\.\\d+)?\\b"
                 }
             ]
