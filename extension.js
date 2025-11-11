@@ -1,28 +1,28 @@
-const vscode = require('vscode');
-const fs = require('fs');
-const path = require('path');
-const docx = require('docx');
+import { commands, window } from 'vscode';
+import { writeFileSync } from 'fs';
+import { extname, dirname, basename, join } from 'path';
+import docx, { LineRuleType } from 'docx';
 const { Document, Packer, Paragraph, TextRun, AlignmentType } = docx;
 
 function activate(context) {
     
-    let exportDocxDisposable = vscode.commands.registerCommand('gaboscript.exportarADOCX', async function () {
+    let exportDocxDisposable = commands.registerCommand('gaboscript.exportarADOCX', async function () {
         
-        const editor = vscode.window.activeTextEditor;
+        const editor = window.activeTextEditor;
         const document = editor.document;
         const currentFilePath = document.uri.fsPath;
         const fileContent = document.getText();
-        const fileExtension = path.extname(currentFilePath).toLowerCase();
+        const fileExtension = extname(currentFilePath).toLowerCase();
         
         if (!editor || fileExtension !== '.gabo') {
-             vscode.window.showErrorMessage('No hay un archivo GaboScript abierto.');
+             window.showErrorMessage('No hay un archivo GaboScript abierto.');
              return;
         }
         
-        const currentDir = path.dirname(currentFilePath);
-        const baseName = path.basename(currentFilePath, fileExtension);
+        const currentDir = dirname(currentFilePath);
+        const baseName = basename(currentFilePath, fileExtension);
         const newFileName = `${baseName}.docx`; 
-        const newFilePath = path.join(currentDir, newFileName);
+        const newFilePath = join(currentDir, newFileName);
 
         try {
             const doc = new Document({
@@ -37,7 +37,7 @@ function activate(context) {
                                         size: 22 
                                     }),
                                 ],
-                                spacing: { line: 360, lineRule: docx.LineRuleType.AUTO } 
+                                spacing: { line: 360, lineRule: LineRuleType.AUTO } 
                             })
                         ),
                     ],
@@ -45,12 +45,12 @@ function activate(context) {
             });
 
             const buffer = await Packer.toBuffer(doc);
-            fs.writeFileSync(newFilePath, buffer);
+            writeFileSync(newFilePath, buffer);
             
-            vscode.window.showInformationMessage(`¡Código GaboScript exportado con éxito a DOCX: ${newFilePath}`);
+            window.showInformationMessage(`¡Código GaboScript exportado con éxito a DOCX: ${newFilePath}`);
             
         } catch (error) {
-            vscode.window.showErrorMessage(`Error al generar el archivo DOCX: ${error.message}`);
+            window.showErrorMessage(`Error al generar el archivo DOCX: ${error.message}`);
         }
     });
 
@@ -59,7 +59,7 @@ function activate(context) {
 
 function deactivate() {}
 
-module.exports = {
+export default {
     activate,
     deactivate
 }
