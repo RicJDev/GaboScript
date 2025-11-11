@@ -12,7 +12,7 @@
     "categories": [
         "Programming Languages"
     ],
-    "main": "./extension.js",
+    "main": "./extension/src/main.js",
     "activationEvents": [
         "onLanguage:gaboscript",
         "onCommand:gaboscript.exportarADOCX"
@@ -23,25 +23,27 @@
                 "id": "gaboscript",
                 "aliases": [
                     "GaboScript",
-                    "gaboscript"
+                    "gaboscript",
+					"gs",
+					"gabo"
                 ],
                 "extensions": [
                     ".gabo"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./extension/language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "gaboscript",
                 "scopeName": "source.gaboscript",
-                "path": "./syntaxes/gaboscript.tmLanguage.json"
+                "path": "./extension/syntax/gaboscript.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "gaboscript",
-                "path": "./snippets/gaboscript.json"
+                "path": "./extension/snippets/gaboscript.json"
             }
         ],
         "commands": [
@@ -50,8 +52,8 @@
                 "title": "Exportar a DOCX",
                 "category": "GaboScript",
                 "icon": {
-                    "light": "./icons/docx-export.svg",
-                    "dark": "./icons/docx-export.svg"
+                    "light": "./extension/icons/docx-export.svg",
+                    "dark": "./extension/icons/docx-export.svg"
                 }
             }
         ],
@@ -80,7 +82,7 @@
             {
                 "id": "gaboscript-icon",
                 "label": "GaboScript Icon",
-                "path": "./file-icon-theme.json"
+                "path": "./extension/icons/file-icon-theme.json"
             }
         ]
     }
