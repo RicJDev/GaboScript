@@ -8,8 +8,8 @@
     "repository": {
         "punctuation": {
             "patterns": [
-                { "name": "punctuation.separator.key-value.gabo", "match": "[:]" },
                 { "name": "meta.separator.parameter.gabo", "match": "," },
+                { "name": "punctuation.separator.key-value.gabo", "match": "[:]" },
                 { "name": "meta.brace.round.gabo", "match": "[()]" },
                 { "name": "meta.brace.square.gabo", "match": "[\\[\\]]" }
             ]
@@ -20,8 +20,8 @@
                 { "include": "#punctuation" },
                 { "include": "#literals" },
                 { "include": "#keywords" },
-                { "include": "#identifiers" },
-				{ "include": "#function_call" }
+				{ "include": "#function_call" },
+                { "include": "#identifiers" }
             ]
         },
 
@@ -34,19 +34,6 @@
                         "1": { "name": "keyword.other.gabo" },
                         "2": { "name": "entity.name.function.gabo" }
                     }
-                },
-                {
-                    "name": "entity.name.function.gabo",
-                    "begin": "\\b(?i:(Funcion|Procedimiento))\\b\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
-                    "end": "\\)",
-                    "beginCaptures": {
-                        "1": { "name": "keyword.other.gabo" },
-                        "2": { "name": "entity.name.function.gabo" }
-                    },
-                    "endCaptures": {
-                        "1": { "name": "punctuation.definition.parameters.end.gabo" }
-                    },
-                    "patterns": [{ "include": "#expressions" }, { "include": "$self" }]
                 }
             ]
         },
@@ -68,7 +55,7 @@
                     "match": "(?i)\\b(entero|cadena|booleano|real|caracter)\\b"
                 },
 				{
-					"match": "(?i)(E/S|E|S)(:)",
+					"match": "(?i)(E\\s*/\\s*S|E|S)\\s*(:)",
 					"captures": {
 						"1": {
 							"name": "entity.name.type.gabo"
