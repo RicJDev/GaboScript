@@ -1,8 +1,7 @@
 import { commands, window } from 'vscode';
 import { writeFileSync } from 'fs';
 import { extname, dirname, basename, join } from 'path';
-import docx, { LineRuleType } from 'docx';
-const { Document, Packer, Paragraph, TextRun, AlignmentType } = docx;
+import { Document, Packer, Paragraph, TextRun, AlignmentType, LineRuleType } from 'docx';
 
 function activate(context) {
     
