@@ -1,20 +1,20 @@
-import { commands, window } from 'vscode';
+import * as vscode from 'vscode';
 import { writeFileSync } from 'fs';
 import { extname, dirname, basename, join } from 'path';
-import { Document, Packer, Paragraph, TextRun, AlignmentType, LineRuleType } from 'docx';
+import { Document, Packer, Paragraph, TextRun, LineRuleType } from 'docx';
 
-function activate(context) {
-    
-    let exportDocxDisposable = commands.registerCommand('gaboscript.exportarADOCX', async function () {
-        
-        const editor = window.activeTextEditor;
+/**
+ * @param {vscode.ExtensionContext} context */
+export function activate(context) {
+    const exportDocxDisposable = vscode.commands.registerCommand('gaboscript.exportarADOCX', async function () {
+        const editor = vscode.window.activeTextEditor;
         const document = editor.document;
         const currentFilePath = document.uri.fsPath;
         const fileContent = document.getText();
         const fileExtension = extname(currentFilePath).toLowerCase();
         
         if (!editor || fileExtension !== '.gabo') {
-             window.showErrorMessage('No hay un archivo GaboScript abierto.');
+             vscode.window.showErrorMessage('No hay un archivo GaboScript abierto.');
              return;
         }
         
@@ -46,19 +46,14 @@ function activate(context) {
             const buffer = await Packer.toBuffer(doc);
             writeFileSync(newFilePath, buffer);
             
-            window.showInformationMessage(`¡Código GaboScript exportado con éxito a DOCX: ${newFilePath}`);
+            vscode.window.showInformationMessage(`¡Código GaboScript exportado con éxito a DOCX: ${newFilePath}`);
             
         } catch (error) {
-            window.showErrorMessage(`Error al generar el archivo DOCX: ${error.message}`);
+            vscode.window.showErrorMessage(`Error al generar el archivo DOCX: ${error.message}`);
         }
     });
 
     context.subscriptions.push(exportDocxDisposable);
 }
 
-function deactivate() {}
-
-export default {
-    activate,
-    deactivate
-}
+export function deactivate() {}
