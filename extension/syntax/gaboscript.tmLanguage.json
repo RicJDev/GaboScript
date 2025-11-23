@@ -72,7 +72,7 @@
             "patterns": [
                 {
                     "name": "support.function.gabo",
-                    "match": "(?i)\\b(Mostrar|Leer)\\b"
+                    "match": "(?i)\\b(Mostrar|Leer|Imprimir)\\b"
                 },
                 {
                     "name": "keyword.operator.assignment.gabo",
