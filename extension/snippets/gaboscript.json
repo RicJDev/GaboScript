@@ -15,20 +15,20 @@
   },
   "Algoritmo": {
     "prefix": "Algoritmo",
-    "body": ["Algoritmo ${1:mi_algoritmo}", "Inicio", "\t// ...", "Fin"]
+    "body": ["Algoritmo ${1:mi_algoritmo}", "Inicio", "\t${0:// ...}", "Fin"]
   },
   "Si-entonces": {
     "prefix": "Si-entonces",
-    "body": ["Si (${1:condicion}) Entonces;", "\t// ...", "Fin_Si"],
+    "body": ["Si (${1:condicion}) Entonces;", "${2:// ...}", "Fin_Si"],
     "description": "Estructura de control Si-Entonces."
   },
   "Si-Sino": {
     "prefix": "Si-Sino",
     "body": [
       "Si (${1:condicion}) Entonces;",
-      "\t// ...",
+      "\t$2:// ...}",
       "\tSino",
-      "\t\t// ...",
+      "\t\t${3:// ...}",
       "Fin_Si"
     ],
     "description": "Estructura de control Si-Sino."
@@ -37,19 +37,19 @@
     "prefix": "Para-hacer",
     "body": [
       "Para (${1:inicial} Hasta ${2:final}) Hacer;",
-      "\t// ...",
+      "\t${3:// ...}",
       "Fin_Para"
     ],
     "description": "Bucle Para (for)."
   },
   "Repetir-hasta": {
     "prefix": "Repetir-hasta",
-    "body": ["Repetir", "\t// ...", "\tHasta(${1:condicion});", "Fin_Repetir"],
+    "body": ["Repetir", "\t${2:// ...}", "\tHasta(${1:condicion});", "Fin_Repetir"],
     "description": "Bucle Repetir-Hasta (do-while)."
   },
   "Mientras-hacer": {
     "prefix": "Mientras-hacer",
-    "body": ["Mientras (${1:condicion}) Hacer;", "\t// ...", "Fin_Mientras"],
+    "body": ["Mientras (${1:condicion}) Hacer;", "\t${2:// ...}", "Fin_Mientras"],
     "description": "Bucle Mientras (while)."
   },
   "En_caso-sea": {
@@ -57,9 +57,9 @@
     "body": [
       "En_Caso (${1:condicion}) Sea;",
       "\tCaso(${2:valor});",
-      "\t\t// ...",
+      "\t\t${3:// ...}",
       "\tOtro_Caso",
-      "\t\t// ...",
+      "\t\t${0:// ...}",
       "Fin_Caso"
     ],
     "description": "Estructura de selección múltiple (switch)."
@@ -68,28 +68,28 @@
     "prefix": "Caso",
     "body": [
       "Caso(${1:valor});",
-      "\t// ..."
+      "\t${0:// ...}"
     ],
     "description": "Define un caso en la estructura En_Caso."
   },
   "Procedimiento": {
     "prefix": "Procedimiento",
     "body": [
-      "Procedimiento ${1:dame_nombre}();",
+      "Procedimiento ${1:dame_nombre}(${2: E/S}: ${3:parametro: Entero});",
       "Inicio",
-      "\t// ...",
+      "\t${0:// ...}",
       "Fin_Procedimiento"
     ],
-    "description": "Define un procedimiento (subrutina)."
+    "description": "Define un procedimiento."
   },
   "Funcion": {
     "prefix": "Funcion",
-    "body": ["Funcion ${1:dame_nombre}();", "Inicio", "\t// ...", "Devolver()","Fin_Funcion"],
+    "body": ["Funcion ${1:dame_nombre}(${2:parametro: Entero}): ${3:Entero};", "Inicio", "\t${0:// ...}", "Devolver();","Fin_Funcion"],
     "description": "Define una función."
   },
   "Registro": {
     "prefix": "Registro",
-    "body": ["Registro ${1:DameNombre};", "\t// ...", "Fin_Registro"],
+    "body": ["Registro: ${1:DameNombre};", "\t${2:// ...}", "Fin_Registro"],
     "description": "Define una estructura de datos (registro)."
   },
   "Mostrar": {
@@ -104,7 +104,7 @@
   },
   "Variable": {
     "prefix": "Variable",
-    "body": ["var ${1:dame_nombre}: entero;"],
+    "body": ["var ${1:dame_nombre}: ${2:Entero};${0}"],
     "description": "Declaración de variable."
   },
   "Validacion": {
@@ -113,7 +113,7 @@
       "Mientras (${1:n} < 1) Hacer;",
       "\tMostrar << \"${2:Es invalido}\";",
       "\tLeer >> ${1:n};",
-      "Fin_Mientras"
+      "Fin_Mientras${0}"
     ],
     "description": "Bucle de validación de entrada."
   }
