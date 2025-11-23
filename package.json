@@ -68,13 +68,15 @@
             "editor/context": [
                 {
                     "command": "gaboscript.exportarADOCX",
-                    "group": "navigation"
+                    "group": "navigation",
+                    "when": "resourceExtname == .gabo"
                 }
             ],
             "explorer/context": [
                 {
                     "command": "gaboscript.exportarADOCX",
-                    "group": "navigation"
+                    "group": "navigation",
+                    "when": "resourceExtname  == '.gabo' || explorerResourceIsFolder"
                 }
             ]
         },
