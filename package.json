@@ -5,7 +5,7 @@
     "version": "0.0.4",
     "publisher": "Las Nuevas Victimas De Elecentro",
     "icon": "./img/GS.png",
-	"type": "module",
+    "type": "module",
     "engines": {
         "vscode": "^1.105.0"
     },
@@ -13,7 +13,7 @@
         "Programming Languages"
     ],
     "main": "./extension/src/main.js",
-    "activationEvents": [        
+    "activationEvents": [
         "onLanguage:gaboscript",
         "onCommand:gaboscript.exportarADOCX"
     ],
@@ -24,8 +24,8 @@
                 "aliases": [
                     "GaboScript",
                     "gaboscript",
-					"gs",
-					"gabo"
+                    "gs",
+                    "gabo"
                 ],
                 "extensions": [
                     ".gabo"
@@ -68,13 +68,15 @@
             "editor/context": [
                 {
                     "command": "gaboscript.exportarADOCX",
-                    "group": "navigation"
+                    "group": "navigation",
+                    "when": "resourceExtname == .gabo"
                 }
             ],
             "explorer/context": [
                 {
                     "command": "gaboscript.exportarADOCX",
-                    "group": "navigation"
+                    "group": "navigation",
+                    "when": "resourceExtname  == '.gabo' || explorerResourceIsFolder"
                 }
             ]
         },
