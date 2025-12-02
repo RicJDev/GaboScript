@@ -1,16 +1,12 @@
 {
   "Comentario_Linea": {
-    "prefix": [ "//", "Comentario-Linea" ],
-    "body": [ "// ${1:Comentario}" ],
+    "prefix": ["//", "Comentario-Linea"],
+    "body": ["// ${1:Comentario}"],
     "description": "Comentario de una sola línea."
   },
   "Comentario_Bloque": {
-    "prefix": [ "/*", "Comentario-Bloque" ],
-    "body": [
-      "/*",
-      "\t${1:Comentario}",
-      "*/"
-    ],
+    "prefix": ["/*", "Comentario-Bloque"],
+    "body": ["/*", "\t${1:Comentario}", "*/"],
     "description": "Comentario de bloque (multi-línea)."
   },
   "Algoritmo": {
@@ -24,22 +20,12 @@
   },
   "Si-Sino": {
     "prefix": "Si-Sino",
-    "body": [
-      "Si (${1:condicion}) Entonces;",
-      "\t$2{:// ...}",
-      "\tSino",
-      "\t\t${3:// ...}",
-      "Fin_Si"
-    ],
+    "body": ["Si (${1:condicion}) Entonces;", "\t$2{:// ...}", "\tSino", "\t\t${3:// ...}", "Fin_Si"],
     "description": "Estructura de control Si-Sino."
   },
   "Para-hacer": {
     "prefix": "Para-hacer",
-    "body": [
-      "Para (${1:inicial} Hasta ${2:final}) Hacer;",
-      "\t${3:// ...}",
-      "Fin_Para"
-    ],
+    "body": ["Para (${1:i = 1} Hasta ${2:i = n}) Hacer;", "\t${3:// ...}", "Fin_Para"],
     "description": "Bucle Para (for)."
   },
   "Repetir-hasta": {
@@ -66,10 +52,7 @@
   },
   "Caso": {
     "prefix": "Caso",
-    "body": [
-      "Caso(${1:valor});",
-      "\t${0:// ...}"
-    ],
+    "body": ["Caso(${1:valor});", "\t${0:// ...}"],
     "description": "Define un caso en la estructura En_Caso."
   },
   "Procedimiento": {
@@ -84,12 +67,18 @@
   },
   "Funcion": {
     "prefix": "Funcion",
-    "body": ["Funcion ${1:dame_nombre}(${2:parametro: Entero}): ${3:Entero};", "Inicio", "\t${0:// ...}", "Devolver();","Fin_Funcion"],
+    "body": [
+      "Funcion ${1:dame_nombre}(${2:parametro: Entero}): ${3:Entero};",
+      "Inicio",
+      "\t${0:// ...}",
+      "Devolver();",
+      "Fin_Funcion"
+    ],
     "description": "Define una función."
   },
   "Registro": {
     "prefix": "Registro",
-    "body": ["Registro: ${1:DameNombre};", "\t${2:// ...}", "Fin_Registro"],
+    "body": ["Registro: ${1:DameNombre};", "\t${0:// ...}", "Fin_Registro"],
     "description": "Define una estructura de datos (registro)."
   },
   "Mostrar": {
@@ -113,8 +102,18 @@
       "Mientras (${1:n} < 1) Hacer;",
       "\tMostrar << \"${2:Es invalido}\";",
       "\tLeer >> ${1:n};",
-      "Fin_Mientras${0}"
+      "Fin_Mientras"
     ],
     "description": "Bucle de validación de entrada."
-  }
+  },
+  "Vector": {
+    "prefix": "Vector",
+    "body": ["var ${1:vector}[${2:n}]: ${3:Entero};", "var ${2:n}: Entero;"],
+    "description": "Arreglo de una dimensión (Vector)"
+  },
+  "Matriz": {
+    "prefix": "Matriz",
+    "body": ["var ${1:matriz}[${2:n}][${3:m}]: ${4:Entero};", "var ${2:n}, ${3:m}: Entero;"]
+  },
+  "description": "Arreglo de dos dimensiones (Matriz)"
 }
