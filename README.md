@@ -1,4 +1,8 @@
-# GaboScript
+
+<div align="center">
+  <img src="./img/GS.png">
+  <h1>GaboScript</h1>
+</div>
 
 Esta extensión proporciona soporte completo para el lenguaje de programación **GaboScript**, ideal para fines educativos y algorítmicos.
 
@@ -34,6 +38,4 @@ Actualmente no hay problemas conocidos. Si encuentra algún error, por favor rep
 
 ### 1.0.0
 
-Lanzamiento inicial de GaboScript con resaltado de sintaxis y snippets.
-
----
+Lanzamiento inicial de GaboScript con soporte completo de sintaxis y snippets.
