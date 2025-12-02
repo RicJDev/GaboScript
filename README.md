@@ -6,15 +6,17 @@ Esta extensión proporciona soporte completo para el lenguaje de programación *
 
 ## Características
 
-* **Resaltado de Sintaxis Avanzado:** Colores específicos para:
-    * **Palabras Clave de Control:** `Si`, `Mientras`, `Para`, `Entonces`, `Sino`, `Repetir`.
-    * **Estructuras:** `Algoritmo`, `Inicio`, `Fin`, `Procedimiento`, `Funcion`, `Registro`.
-    * **Tipos de Datos:** `entero`, `cadena`, `booleano`, `real`.
-    * **Operadores y Símbolos:** Colores distintos para `+`, `-`, `=`, `<<`, `>>`, paréntesis, puntos y comas.
-    * **Literales:** Resaltado de números y cadenas de texto (entre comillas `""`).
+-   **Resaltado de Sintaxis Avanzado:** Colores específicos para:
+    -   **Palabras Clave de Control:** `Si`, `Mientras`, `Para`, `Entonces`, `Sino`, `Repetir`.
+    -   **Estructuras:** `Algoritmo`, `Inicio`, `Fin`, `Procedimiento`, `Funcion`, `Registro`.
+    -   **Tipos de Datos:** `entero`, `cadena`, `booleano`, `real`.
+    -   **Operadores y Símbolos:** Colores distintos para `+`, `-`, `=`, `<<`, `>>`, paréntesis, puntos y comas.
+    -   **Literales:** Resaltado de números y cadenas de texto (entre comillas `""`).
 
-* **Snippets de Código (Autocompletado):** Plantillas de código fáciles de usar para todas las estructuras de control principales. Escribe el prefijo y presiona `Enter` para generar el bloque completo, incluyendo tabulación y marcadores para el cursor.
-    * Ejemplos: `Si-Sino`, `Para-hacer`, `Mientras-hacer`, `Procedimiento`, `Algoritmo`.
+-   **Snippets de Código (Autocompletado):** Plantillas de código fáciles de usar para todas las estructuras de control principales. Escribe el prefijo y presiona `Enter` para generar el bloque completo, incluyendo tabulación y marcadores para el cursor.
+    -   Ejemplos: `Si-Sino`, `Para-hacer`, `Mientras-hacer`, `Procedimiento`, `Algoritmo`.
+
+-   **Exportar los archivos como un documento docx:** ¡Permite compartir su código rápidamente con pocos clicks! Puedes exportar tu carpeta de trabajo actual o seleccionar los archivos a exportar.
 
 ## Requisitos
 
@@ -32,6 +34,6 @@ Actualmente no hay problemas conocidos. Si encuentra algún error, por favor rep
 
 ### 1.0.0
 
-Lanzamiento inicial de GaboScript con soporte completo de sintaxis y snippets.
+Lanzamiento inicial de GaboScript con resaltado de sintaxis y snippets.
 
 ---
