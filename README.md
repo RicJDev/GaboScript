@@ -17,7 +17,7 @@ Esta extensión proporciona soporte completo para el lenguaje de programación *
 -   **Snippets de Código (Autocompletado):** Plantillas de código fáciles de usar para todas las estructuras de control principales. Escribe el prefijo y presiona `Enter` para generar el bloque completo, incluyendo tabulación y marcadores para el cursor.
     -   Ejemplos: `Si-Sino`, `Para-hacer`, `Mientras-hacer`, `Procedimiento`, `Algoritmo`.
 
--   **Exportar los archivos como un documento docx:** ¡Comparte su código con pocos clicks! Puedes exportar tu carpeta de trabajo actual o seleccionar los archivos y generar un documento docx con el contenido.
+-   **Exportar los archivos como un documento docx:** ¡Comparte tu código con pocos clicks! Puedes exportar tu carpeta de trabajo actual o seleccionar los archivos y generar un documento docx con el contenido.
 
 ## Requisitos
 
