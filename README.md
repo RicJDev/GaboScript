@@ -1,8 +1,8 @@
 Esta extensión proporciona soporte completo para el lenguaje de programación **GaboScript**, ideal para fines educativos y algorítmicos.
 
 <div align="center">
-  <img src="./img/GS.png">
   <h1>GaboScript</h1>
+  <img src="./img/GS.png">
 </div>
 
 ## Características
