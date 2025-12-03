@@ -4,7 +4,7 @@
     "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis y autocompletado.",
     "version": "0.0.4",
     "scripts": {
-        "pack": "vsce package --no-rewrite-relative-links"
+        "pack": "vsce package --no-rewrite-relative-links --allow-missing-repository"
     },
     "publisher": "Las-Nuevas-Victimas-De-Elecentro",
     "icon": "./img/GS.png",
