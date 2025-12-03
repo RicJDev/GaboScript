@@ -56,6 +56,7 @@ export function activate(context) {
     );
 
     context.subscriptions.push(exportDocxDisposable);
+    context.subscriptions.push(completionProvider);
 }
 
 export function deactivate() {}
