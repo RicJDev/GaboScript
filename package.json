@@ -18,6 +18,7 @@
     "main": "./extension/src/main.js",
     "activationEvents": [
         "onLanguage:gaboscript",
+        "onLanguage:gabo",
         "onCommand:gaboscript.exportarADOCX"
     ],
     "contributes": {
