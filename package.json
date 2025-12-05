@@ -3,9 +3,7 @@
     "displayName": "GaboScript",
     "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis y autocompletado.",
     "version": "0.0.4",
-    "scripts": {
-        "pack": "vsce package --no-rewrite-relative-links --allow-missing-repository"
-    },
+    "scripts": {},
     "publisher": "Las-Nuevas-Victimas-De-Elecentro",
     "icon": "./img/GS.png",
     "type": "module",
@@ -94,8 +92,5 @@
     },
     "dependencies": {
         "docx": "9.5.1"
-    },
-    "devDependencies": {
-        "@vscode/vsce": "3.7.1"
     }
 }
