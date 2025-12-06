@@ -15,12 +15,12 @@
   },
   "Si-entonces": {
     "prefix": "Si-entonces",
-    "body": ["Si (${1:condicion}) Entonces;", "${2:// ...}", "Fin_Si"],
+    "body": ["Si (${1:condicion}) Entonces;", "\t${2:// ...}", "Fin_Si"],
     "description": "Estructura de control Si-Entonces."
   },
   "Si-Sino": {
     "prefix": "Si-Sino",
-    "body": ["Si (${1:condicion}) Entonces;", "\t$2{:// ...}", "\tSino", "\t\t${3:// ...}", "Fin_Si"],
+    "body": ["Si (${1:condicion}) Entonces;", "\t${2:// ...}", "\tSino", "\t\t${3:// ...}", "Fin_Si"],
     "description": "Estructura de control Si-Sino."
   },
   "Para-hacer": {
@@ -45,14 +45,14 @@
       "\tCaso(${2:valor});",
       "\t\t${3:// ...}",
       "\tOtro_Caso",
-      "\t\t${0:// ...}",
+      "\t\t${4:// ...}",
       "Fin_Caso"
     ],
     "description": "Estructura de selección múltiple (switch)."
   },
   "Caso": {
     "prefix": "Caso",
-    "body": ["Caso(${1:valor});", "\t${0:// ...}"],
+    "body": ["Caso(${1:valor});", "\t${2:// ...}"],
     "description": "Define un caso en la estructura En_Caso."
   },
   "Procedimiento": {
@@ -71,14 +71,14 @@
       "Funcion ${1:dame_nombre}(${2:parametro: Entero}): ${3:Entero};",
       "Inicio",
       "\t${0:// ...}",
-      "Devolver();",
+      "\tDevolver();",
       "Fin_Funcion"
     ],
     "description": "Define una función."
   },
   "Registro": {
     "prefix": "Registro",
-    "body": ["Registro: ${1:DameNombre};", "\t${0:// ...}", "Fin_Registro"],
+    "body": ["Registro: ${1:DameNombre};", "\t${2:// ...}", "Fin_Registro"],
     "description": "Define una estructura de datos (registro)."
   },
   "Mostrar": {
@@ -93,7 +93,7 @@
   },
   "Variable": {
     "prefix": "Variable",
-    "body": ["var ${1:dame_nombre}: ${2:Entero};${0}"],
+    "body": ["var ${1:dame_nombre}: ${2:Entero};"],
     "description": "Declaración de variable."
   },
   "Validacion": {
