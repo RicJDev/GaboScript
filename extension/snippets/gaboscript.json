@@ -81,6 +81,11 @@
     "body": ["Registro: ${1:DameNombre};", "\t${2:// ...}", "Fin_Registro"],
     "description": "Define una estructura de datos (registro)."
   },
+  "Imprimir": {
+    "prefix": "Imprimir",
+    "body": ["Imprimir << ${1:valor};"],
+    "description": "Comando de salida alternativo."
+  },
   "Mostrar": {
     "prefix": "Mostrar",
     "body": ["Mostrar << ${1:valor};"],
