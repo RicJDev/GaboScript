@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 import { keywords } from './keywords/keywords.js';
 import { dataTypes } from './keywords/dataTypes.js';
-import { operators } from "./keywords/operators.js";
-import { parameters } from "./keywords/parameters.js";
+import { operators } from './keywords/operators.js';
+import { parameters } from './keywords/parameters.js';
 
 /**@implements {vscode.CompletionItemProvider} */
 export class BasicProvider {
@@ -12,7 +12,6 @@ export class BasicProvider {
      * @param {vscode.Position} position
      * @param {vscode.CancellationToken} _token
      * @param {vscode.CompletionContext} context
-     * @returns {vscode.CompletionList}
      */
     async provideCompletionItems(document, position, _token, context) {
         const keywordsCommands = keywords.map((keyword) => {
@@ -43,19 +42,17 @@ export class BasicProvider {
             );
         });
 
-        const defaultCompletions = await vscode.commands.executeCommand(
-            'vscode.executeCompletionItemProvider',
-            document.uri,
-            position,
-            context.triggerCharacter,
-        );
+        const defaultCompletions = { items: [] };
+
+        /*
+
+        */
 
         return [
             ...keywordsCommands,
             ...dataTypesCommands,
             ...parametersCommands,
             ...operatorsCommand,
-            ...(defaultCompletions?.items || []),
         ];
     }
 }
