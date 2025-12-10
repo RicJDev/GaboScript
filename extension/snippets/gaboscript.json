@@ -58,7 +58,7 @@
   "Procedimiento": {
     "prefix": "Procedimiento",
     "body": [
-      "Procedimiento ${1:dame_nombre}(${2: E/S}: ${3:parametro: Entero});",
+      "Procedimiento ${1:dame_nombre}(${2:E/S}: ${3:parametro: Entero});",
       "Inicio",
       "\t${0:// ...}",
       "Fin_Procedimiento"
@@ -98,7 +98,7 @@
   },
   "Variable": {
     "prefix": "Variable",
-    "body": ["var ${1:dame_nombre}: ${2:Entero};"],
+    "body": ["Var ${1:dame_nombre}: ${2:Entero};"],
     "description": "Declaración de variable."
   },
   "Validacion": {
