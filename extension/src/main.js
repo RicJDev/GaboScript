@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { generateDOCX } from './docx/generateDOCX.js';
-import { BasicProvider } from './providers/BasicProvider.js';
+import { WordsProvider } from './providers/WordsProvider.js';
+import { SyntaxProvider } from './providers/SyntaxProvider.js';
 
 /**
  * @param {vscode.ExtensionContext} context */
@@ -10,27 +11,17 @@ export async function activate(context) {
         generateDOCX,
     );
 
-    const basicProvider = vscode.languages.registerCompletionItemProvider(
+    const words = vscode.languages.registerCompletionItemProvider(
         'gaboscript',
-        new BasicProvider(),
+        new WordsProvider(),
     );
 
-    const defaultProvider = vscode.languages.registerCompletionItemProvider(
+    const syntax = vscode.languages.registerCompletionItemProvider(
         'gaboscript',
-        {
-            async provideCompletionItems(document, position, _, context) {
-                return await vscode.commands.executeCommand(
-                    'vscode.executeCompletionItemProvider',
-                    document.uri,
-                    position,
-                    context.triggerCharacter,
-                );
-            },
-        },
+        new SyntaxProvider(),
     );
 
-    context.subscriptions.push(exportDocxDisposable);
-    context.subscriptions.push(basicProvider, defaultProvider);
+    context.subscriptions.push(exportDocxDisposable, words, syntax);
 }
 
 export function deactivate() {}
