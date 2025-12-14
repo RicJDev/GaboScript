@@ -2,10 +2,14 @@
     "name": "gaboscript",
     "displayName": "GaboScript",
     "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis y autocompletado.",
-    "version": "0.1.0",
+    "version": "2.0.1",
     "scripts": {},
     "publisher": "Las-Nuevas-Victimas-De-Elecentro",
-    "icon": "./img/GS.png",
+    "icon": "img/GS.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Ant1Dev/GaboScript.git"
+    },
     "type": "module",
     "engines": {
         "vscode": "^1.105.0"
@@ -17,7 +21,8 @@
     "activationEvents": [
         "onLanguage:gaboscript",
         "onLanguage:gabo",
-        "onCommand:gaboscript.exportarADOCX"
+        "onCommand:gaboscript.exportarADOCX",
+        "onCommand:gaboscript.toggleSemis"
     ],
     "contributes": {
         "languages": [
@@ -57,12 +62,26 @@
                     "light": "./extension/icons/docx-export.svg",
                     "dark": "./extension/icons/docx-export.svg"
                 }
+            },
+            {
+                "command": "gaboscript.toggleSemis",
+                "title": "Verificación de Punto y Coma",
+                "category": "GaboScript",
+                "icon": {
+                    "light": "./extension/icons/semicolon-toggle.svg",
+                    "dark": "./extension/icons/semicolon-toggle.svg"
+                }
             }
         ],
         "menus": {
             "editor/title": [
                 {
                     "command": "gaboscript.exportarADOCX",
+                    "group": "navigation",
+                    "when": "resourceExtName == .gabo"
+                },
+                {
+                    "command": "gaboscript.toggleSemis",
                     "group": "navigation",
                     "when": "resourceExtName == .gabo"
                 }
@@ -79,6 +98,11 @@
                     "command": "gaboscript.exportarADOCX",
                     "group": "navigation",
                     "when": "resourceExtname  == '.gabo' || explorerResourceIsFolder"
+                },
+                {
+                    "command": "gaboscript.toggleSemis",
+                    "group": "navigation",
+                    "when": "resourceExtname  == '.gabo'"
                 }
             ]
         },

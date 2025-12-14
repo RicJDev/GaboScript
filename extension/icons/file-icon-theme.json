@@ -1,14 +1,19 @@
 {
   "iconDefinitions": {
     "gaboscript-file-icon": {
-      "iconPath": "./gabo-icon.png" 
+      "iconPath": "./gabo-icon.png"
     },
     "docx-file-icon": {
-      "iconPath": "./docx-icon.png" 
+      "iconPath": "./docx-icon.png"
+    },
+    "default-folder-icon": {
+      "iconPath": "./folder-icon.png" 
     }
   },
   "fileExtensions": {
     "gabo": "gaboscript-file-icon",
-    "docx": "docx-file-icon" 
-  }
+    "docx": "docx-file-icon"
+  },
+  "folder": "default-folder-icon",
+  "folderExpanded": "default-folder-icon"
 }

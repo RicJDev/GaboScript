@@ -2,13 +2,20 @@ import * as vscode from 'vscode';
 import { generateDOCX } from './docx/generateDOCX.js';
 import { WordsProvider } from './providers/WordsProvider.js';
 import { SyntaxProvider } from './providers/SyntaxProvider.js';
+import { initDiagnostics, disposeDiagnostics, toggleSemisSetting } from './providers/DiagnosticsProvider.js';
 
-/**
- * @param {vscode.ExtensionContext} context */
 export async function activate(context) {
+    
+    initDiagnostics(context);
+
     const exportDocxDisposable = vscode.commands.registerCommand(
         'gaboscript.exportarADOCX',
         generateDOCX,
+    );
+
+    const toggleSemisDisposable = vscode.commands.registerCommand(
+        'gaboscript.toggleSemis',
+        () => toggleSemisSetting(context), 
     );
 
     const words = vscode.languages.registerCompletionItemProvider(
@@ -21,7 +28,9 @@ export async function activate(context) {
         new SyntaxProvider(),
     );
 
-    context.subscriptions.push(exportDocxDisposable, words, syntax);
+    context.subscriptions.push(exportDocxDisposable, toggleSemisDisposable, words, syntax);
 }
 
-export function deactivate() {}
+export function deactivate() {
+    disposeDiagnostics();
+}
