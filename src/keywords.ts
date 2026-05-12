@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
+import type { KeywordEntry } from './types';
 
-export const syntaxKeywords = [
+export const syntaxKeywords: KeywordEntry[] = [
     { text: 'Algoritmo', kind: vscode.CompletionItemKind.Keyword },
     { text: 'Inicio', kind: vscode.CompletionItemKind.Keyword },
     { text: 'Registro', kind: vscode.CompletionItemKind.Keyword },

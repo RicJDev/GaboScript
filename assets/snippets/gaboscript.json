@@ -118,7 +118,7 @@
   },
   "Matriz": {
     "prefix": "Matriz",
-    "body": ["var ${1:matriz}[${2:n}][${3:m}]: ${4:Entero};", "var ${2:n}, ${3:m}: Entero;"]
-  },
-  "description": "Arreglo de dos dimensiones (Matriz)"
+    "body": ["var ${1:matriz}[${2:n}][${3:m}]: ${4:Entero};", "var ${2:n}, ${3:m}: Entero;"],
+    "description": "Arreglo de dos dimensiones (Matriz)"
+  }
 }

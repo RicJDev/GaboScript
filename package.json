@@ -1,22 +1,24 @@
 {
     "name": "gaboscript",
     "displayName": "GaboScript",
-    "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis y autocompletado.",
+    "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis, autocompletado, diagnósticos y formateo.",
     "version": "0.1.0",
-    "scripts": {},
+    "scripts": {
+        "build": "node esbuild.config.mjs",
+        "watch": "node esbuild.config.mjs --watch",
+        "typecheck": "tsc --noEmit"
+    },
     "publisher": "Las-Nuevas-Victimas-De-Elecentro",
-    "icon": "./img/GS.png",
-    "type": "module",
+    "icon": "./assets/brand/GS.png",
     "engines": {
         "vscode": "^1.105.0"
     },
     "categories": [
         "Programming Languages"
     ],
-    "main": "./extension/src/main.js",
+    "main": "./out/extension.js",
     "activationEvents": [
         "onLanguage:gaboscript",
-        "onLanguage:gabo",
         "onCommand:gaboscript.exportarADOCX"
     ],
     "contributes": {
@@ -26,26 +28,25 @@
                 "aliases": [
                     "GaboScript",
                     "gaboscript",
-                    "gs",
                     "gabo"
                 ],
                 "extensions": [
                     ".gabo"
                 ],
-                "configuration": "./extension/language-configuration.json"
+                "configuration": "./assets/language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "gaboscript",
                 "scopeName": "source.gaboscript",
-                "path": "./extension/syntax/gaboscript.tmLanguage.json"
+                "path": "./assets/syntax/gaboscript.tmLanguage.json"
             }
         ],
         "snippets": [
             {
                 "language": "gaboscript",
-                "path": "./extension/snippets/gaboscript.json"
+                "path": "./assets/snippets/gaboscript.json"
             }
         ],
         "commands": [
@@ -54,8 +55,8 @@
                 "title": "Exportar a DOCX",
                 "category": "GaboScript",
                 "icon": {
-                    "light": "./extension/icons/docx-export.svg",
-                    "dark": "./extension/icons/docx-export.svg"
+                    "light": "./assets/icons/docx-export.svg",
+                    "dark": "./assets/icons/docx-export.svg"
                 }
             }
         ],
@@ -71,14 +72,14 @@
                 {
                     "command": "gaboscript.exportarADOCX",
                     "group": "navigation",
-                    "when": "resourceExtname == .gabo"
+                    "when": "resourceExtName == .gabo"
                 }
             ],
             "explorer/context": [
                 {
                     "command": "gaboscript.exportarADOCX",
                     "group": "navigation",
-                    "when": "resourceExtname  == '.gabo' || explorerResourceIsFolder"
+                    "when": "resourceExtName == '.gabo' || explorerResourceIsFolder"
                 }
             ]
         },
@@ -86,9 +87,15 @@
             {
                 "id": "gaboscript-icon",
                 "label": "GaboScript Icon",
-                "path": "./extension/icons/file-icon-theme.json"
+                "path": "./assets/file-icon-theme.json"
             }
         ]
+    },
+    "devDependencies": {
+        "@types/node": "^22",
+        "@types/vscode": "^1.105.0",
+        "esbuild": "^0.25",
+        "typescript": "^5.8"
     },
     "dependencies": {
         "docx": "9.5.1"
