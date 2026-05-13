@@ -3,7 +3,10 @@ import { writeFileSync } from 'node:fs';
 import { basename } from 'node:path';
 import { Document, Packer, Paragraph, TextRun, LineRuleType } from 'docx';
 
-export async function createDoc(fileContent: string, outputPath: string): Promise<void> {
+export async function createDoc(
+    fileContent: string,
+    outputPath: string,
+): Promise<void> {
     try {
         const doc = new Document({
             sections: [

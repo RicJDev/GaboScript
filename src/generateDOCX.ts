@@ -21,7 +21,12 @@ export async function generateDOCX(
     const tempFile = join(tmpdir(), 'temp.gabo');
     const writeStream = createWriteStream(tempFile, { flags: 'w' });
 
-    const targets = selectedUris && selectedUris.length > 0 ? selectedUris : uri ? [uri] : [];
+    const targets =
+        selectedUris && selectedUris.length > 0
+            ? selectedUris
+            : uri
+              ? [uri]
+              : [];
     const newFile = deriveOutputName(uri ?? targets[0], targets);
 
     try {

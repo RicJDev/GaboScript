@@ -7,7 +7,9 @@ export class SyntaxProvider implements vscode.CompletionItemProvider<vscode.Comp
         _position: vscode.Position,
         _token: vscode.CancellationToken,
         _context: vscode.CompletionContext,
-    ): vscode.ProviderResult<vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>> {
+    ): vscode.ProviderResult<
+        vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>
+    > {
         return syntaxKeywords.map(({ text, kind }) => {
             return new vscode.CompletionItem(text, kind);
         });

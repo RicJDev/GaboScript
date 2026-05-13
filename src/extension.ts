@@ -28,7 +28,8 @@ export function activate(context: vscode.ExtensionContext) {
         new GaboScriptFormatter(),
     );
 
-    diagnosticCollection = vscode.languages.createDiagnosticCollection('gaboscript');
+    diagnosticCollection =
+        vscode.languages.createDiagnosticCollection('gaboscript');
     context.subscriptions.push(diagnosticCollection);
 
     const diagnosticRefresh = (document: vscode.TextDocument) => {
@@ -39,7 +40,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         vscode.workspace.onDidOpenTextDocument(diagnosticRefresh),
-        vscode.workspace.onDidChangeTextDocument((e) => diagnosticRefresh(e.document)),
+        vscode.workspace.onDidChangeTextDocument((e) =>
+            diagnosticRefresh(e.document),
+        ),
     );
 
     if (vscode.window.activeTextEditor) {

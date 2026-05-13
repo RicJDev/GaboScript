@@ -22,16 +22,19 @@
 > **Estado:** 🚧 En progreso — _Estimado: próximo mes_
 
 ### Autocompletado inteligente
+
 - [ ] Completado de palabras del documento (variables, identificadores)
 - [ ] Completado de campos de registros al escribir `.` después de una variable de tipo registro
 - [ ] Snippets pulidos con mejor contexto y tabulación
 
 ### Exportación DOCX
+
 - [ ] Refinar interfaz de usuario (selector de archivos, progreso)
 - [ ] Manejo de errores más robusto
 - [ ] Soporte para selección múltiple en el explorador
 
 ### Calidad
+
 - [ ] Pruebas unitarias para los providers
 - [ ] Pruebas de integración para diagnósticos y formateo
 
@@ -42,20 +45,24 @@
 > **Estado:** 📋 Planificado — _Estimado: próximo trimestre_
 
 ### Linter
+
 - [ ] Detectar variables no declaradas
 - [ ] Validar tipos en asignaciones
 - [ ] Advertencias por estilo (convenciones de nombres)
 
 ### Code Actions
+
 - [ ] Acción "Cerrar bloque faltante" (agrega `Fin_*` automáticamente)
 - [ ] Acción "Eliminar bloque vacío"
 
 ### Navegación y edición
+
 - [ ] Folding de regiones (plegar `Algoritmo…Fin`, `Si…Fin_Si`, etc.)
 - [ ] Bracket matching mejorado (resaltar pares)
 - [ ] Breadcrumbs (migaja de pan) con estructura del programa
 
 ### Infraestructura
+
 - [ ] GitHub Actions: build + test automático
 - [ ] Publicación automática a Marketplace + OpenVSX
 
@@ -66,11 +73,13 @@
 > **Estado:** 📋 Planificado — _Estimado: próximo semestre_
 
 ### Nuevos formatos de exportación
+
 - [ ] Exportar proyecto a **Markdown** (experimental)
 - [ ] Exportar proyecto a **LaTeX** (experimental)
 - [ ] Vista previa del documento antes de exportar
 
 ### Mejoras en el editor
+
 - [ ] Hover documentation: tooltips informativos al pasar el mouse sobre keywords
 - [ ] CodeLens: mostrar cantidad de líneas por bloque
 - [ ] Mejoras de performance en archivos grandes

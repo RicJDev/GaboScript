@@ -7,7 +7,9 @@ export class WordsProvider implements vscode.CompletionItemProvider<vscode.Compl
         _position: vscode.Position,
         _token: vscode.CancellationToken,
         _context: vscode.CompletionContext,
-    ): vscode.ProviderResult<vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>> {
+    ): vscode.ProviderResult<
+        vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>
+    > {
         const regex = /\b[a-zA-Z_][a-zA-Z0-9_]*\b/gi;
         const text = document.getText();
         const matches = text.match(regex) ?? [];
@@ -19,7 +21,10 @@ export class WordsProvider implements vscode.CompletionItemProvider<vscode.Compl
         });
 
         return words.map((word) => {
-            return new vscode.CompletionItem(word, vscode.CompletionItemKind.Text);
+            return new vscode.CompletionItem(
+                word,
+                vscode.CompletionItemKind.Text,
+            );
         });
     }
 }

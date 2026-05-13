@@ -49,12 +49,12 @@ Las ideas son bienvenidas. Abre un [issue](https://github.com/RicJDev/GaboScript
 
 - Usa mensajes descriptivos en español o inglés
 - Prefiero el formato: `tipo: descripción breve`
-  - `feat:` — nueva funcionalidad
-  - `fix:` — corrección de bug
-  - `refactor:` — cambio que no agrega funcionalidad ni corrige bugs
-  - `docs:` — cambios en documentación
-  - `test:` — agregar o modificar tests
-  - `chore:` — tareas de infraestructura
+    - `feat:` — nueva funcionalidad
+    - `fix:` — corrección de bug
+    - `refactor:` — cambio que no agrega funcionalidad ni corrige bugs
+    - `docs:` — cambios en documentación
+    - `test:` — agregar o modificar tests
+    - `chore:` — tareas de infraestructura
 - Ejemplo: `feat: agregar autocompletado de campos de registros`
 
 ## Desarrollo local
@@ -75,10 +75,10 @@ pnpm install
 
 ### Comandos disponibles
 
-| Comando | Descripción |
-|---|---|
-| `pnpm run build` | Compila TypeScript → JavaScript (esbuild) |
-| `pnpm run watch` | Compila y recompila al detectar cambios |
+| Comando              | Descripción                                    |
+| -------------------- | ---------------------------------------------- |
+| `pnpm run build`     | Compila TypeScript → JavaScript (esbuild)      |
+| `pnpm run watch`     | Compila y recompila al detectar cambios        |
 | `pnpm run typecheck` | Verifica tipos con TypeScript (`tsc --noEmit`) |
 
 ### Probar la extensión localmente
