@@ -1,102 +1,102 @@
 {
-    "name": "gaboscript",
-    "displayName": "GaboScript",
-    "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis, autocompletado, diagnósticos y formateo.",
-    "version": "0.1.0",
-    "scripts": {
-        "format": "prettier --write .",
-        "build": "node esbuild.config.mjs",
-        "watch": "node esbuild.config.mjs --watch",
-        "typecheck": "tsc --noEmit"
-    },
-    "publisher": "Las-Victimas-De-Elecentro",
-    "icon": "./assets/brand/GS.png",
-    "engines": {
-        "vscode": "^1.105.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "main": "./out/extension.js",
-    "activationEvents": [
-        "onLanguage:gaboscript",
-        "onCommand:gaboscript.exportarADOCX"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "gaboscript",
-                "aliases": [
-                    "GaboScript",
-                    "gaboscript",
-                    "gabo"
-                ],
-                "extensions": [
-                    ".gabo"
-                ],
-                "configuration": "./assets/language-configuration.json",
-                "icon": {
-                    "light": "./assets/icons/gabo-icon.png",
-                    "dark": "./assets/icons/gabo-icon.png"
-                }
-            }
+  "name": "gaboscript",
+  "displayName": "GaboScript",
+  "description": "Soporte para el lenguaje educativo GaboScript, incluyendo resaltado de sintaxis, autocompletado, diagnósticos y formateo.",
+  "version": "0.1.0",
+  "scripts": {
+    "format": "prettier --write .",
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "publisher": "Las-Victimas-De-Elecentro",
+  "icon": "./assets/brand/GS.png",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:gaboscript",
+    "onCommand:gaboscript.exportarADOCX"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gaboscript",
+        "aliases": [
+          "GaboScript",
+          "gaboscript",
+          "gabo"
         ],
-        "grammars": [
-            {
-                "language": "gaboscript",
-                "scopeName": "source.gaboscript",
-                "path": "./assets/syntax/gaboscript.tmLanguage.json"
-            }
+        "extensions": [
+          ".gabo"
         ],
-        "snippets": [
-            {
-                "language": "gaboscript",
-                "path": "./assets/snippets/gaboscript.json"
-            }
-        ],
-        "commands": [
-            {
-                "command": "gaboscript.exportarADOCX",
-                "title": "Exportar a DOCX",
-                "category": "GaboScript",
-                "icon": {
-                    "light": "./assets/icons/docx-export.svg",
-                    "dark": "./assets/icons/docx-export.svg"
-                }
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "command": "gaboscript.exportarADOCX",
-                    "group": "navigation",
-                    "when": "resourceExtName == .gabo"
-                }
-            ],
-            "editor/context": [
-                {
-                    "command": "gaboscript.exportarADOCX",
-                    "group": "navigation",
-                    "when": "resourceExtName == .gabo"
-                }
-            ],
-            "explorer/context": [
-                {
-                    "command": "gaboscript.exportarADOCX",
-                    "group": "navigation",
-                    "when": "resourceExtName == '.gabo' || explorerResourceIsFolder"
-                }
-            ]
+        "configuration": "./assets/language-configuration.json",
+        "icon": {
+          "light": "./assets/icons/gabo-icon.png",
+          "dark": "./assets/icons/gabo-icon.png"
         }
-    },
-    "devDependencies": {
-        "@types/node": "^22",
-        "@types/vscode": "^1.105.0",
-        "esbuild": "^0.25",
-        "prettier": "^3.8.3",
-        "typescript": "^5.8"
-    },
-    "dependencies": {
-        "docx": "9.5.1"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gaboscript",
+        "scopeName": "source.gaboscript",
+        "path": "./assets/syntax/gaboscript.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "gaboscript",
+        "path": "./assets/snippets/gaboscript.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "gaboscript.exportarADOCX",
+        "title": "Exportar a DOCX",
+        "category": "GaboScript",
+        "icon": {
+          "light": "./assets/icons/docx-export.svg",
+          "dark": "./assets/icons/docx-export.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "gaboscript.exportarADOCX",
+          "group": "navigation",
+          "when": "resourceExtName == .gabo"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "gaboscript.exportarADOCX",
+          "group": "navigation",
+          "when": "resourceExtName == .gabo"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "gaboscript.exportarADOCX",
+          "group": "navigation",
+          "when": "resourceExtName == '.gabo' || explorerResourceIsFolder"
+        }
+      ]
     }
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/vscode": "^1.105.0",
+    "esbuild": "^0.25",
+    "prettier": "^3.8.3",
+    "typescript": "^5.8"
+  },
+  "dependencies": {
+    "docx": "9.5.1"
+  }
 }
