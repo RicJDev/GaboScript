@@ -9,7 +9,7 @@
         "watch": "node esbuild.config.mjs --watch",
         "typecheck": "tsc --noEmit"
     },
-    "publisher": "Las-Nuevas-Victimas-De-Elecentro",
+    "publisher": "Las-Victimas-De-Elecentro",
     "icon": "./assets/brand/GS.png",
     "engines": {
         "vscode": "^1.105.0"
@@ -34,7 +34,11 @@
                 "extensions": [
                     ".gabo"
                 ],
-                "configuration": "./assets/language-configuration.json"
+                "configuration": "./assets/language-configuration.json",
+                "icon": {
+                    "light": "./assets/icons/gabo-icon.png",
+                    "dark": "./assets/icons/gabo-icon.png"
+                }
             }
         ],
         "grammars": [
@@ -83,14 +87,7 @@
                     "when": "resourceExtName == '.gabo' || explorerResourceIsFolder"
                 }
             ]
-        },
-        "iconThemes": [
-            {
-                "id": "gaboscript-icon",
-                "label": "GaboScript Icon",
-                "path": "./assets/file-icon-theme.json"
-            }
-        ]
+        }
     },
     "devDependencies": {
         "@types/node": "^22",
