@@ -1,4 +1,14 @@
-node_modules
-out
+node_modules/
+out/
+dist/
+
+*.tsbuildinfo
 *.vsix
 .env
+.env.*
+
+.vscode-test/
+.vscode/settings.json
+
+.DS_Store
+Thumbs.db
