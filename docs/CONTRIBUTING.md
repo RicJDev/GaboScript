@@ -80,6 +80,7 @@ pnpm install
 | `pnpm run build`     | Compila TypeScript → JavaScript (esbuild)      |
 | `pnpm run watch`     | Compila y recompila al detectar cambios        |
 | `pnpm run typecheck` | Verifica tipos con TypeScript (`tsc --noEmit`) |
+| `pnpm run format`    | Formatea el texto utilizando el .pretierrc     |
 
 ### Probar la extensión localmente
 
