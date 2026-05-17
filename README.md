@@ -5,14 +5,14 @@
 <h1 align="center">GaboScript para VS Code</h1>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=Las-Nuevas-Victimas-De-Elecentro.gaboscript">
+  <!-- <a href="https://marketplace.visualstudio.com/items?itemName=Las-Nuevas-Victimas-De-Elecentro.gaboscript">
     <img src="https://img.shields.io/visual-studio-marketplace/v/Las-Nuevas-Victimas-De-Elecentro.gaboscript?label=VS%20Marketplace&logo=visualstudiocode" alt="VS Marketplace">
-  </a>
-  <a href="https://open-vsx.org/extension/Las-Nuevas-Victimas-De-Elecentro/gaboscript">
+  </a> -->
+  <!-- <a href="https://open-vsx.org/extension/Las-Nuevas-Victimas-De-Elecentro/gaboscript">
     <img src="https://img.shields.io/open-vsx/v/Las-Nuevas-Victimas-De-Elecentro/gaboscript?label=OpenVSX&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEuNjEgMjEuNTlhMS45OCAxLjk4IDAgMCAwIDIuNzggMGw3LjQ0LTcuNDNhMiAyIDAgMCAwIDAtMi44MkwxNC4zOSAzLjkxYTIgMiAwIDAgMC0yLjc4IDBsLTcuNDQgNy40M2EyIDIgMCAwIDAgMCAyLjgzeiIgZmlsbD0iIzI4NTVGRiIvPjwvc3ZnPg==" alt="OpenVSX">
-  </a>
+  </a> -->
   <a href="./LICENSE">
-    <img src="https://img.shields.io/badge/license-MPL--2.0-blue" alt="License">
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
   </a>
   <a href="https://github.com/RicJDev/GaboScript">
     <img src="https://img.shields.io/badge/VS%20Code-%5E1.105.0-007ACC?logo=visualstudiocode" alt="VS Code">
@@ -75,7 +75,7 @@ Comparte tu código en formato documento exportando la carpeta de trabajo o arch
 - VS Code ^1.105.0
 - No requiere dependencias externas ni runtime
 
----
+## <!--
 
 ## Cómo usar
 
@@ -83,7 +83,7 @@ Comparte tu código en formato documento exportando la carpeta de trabajo o arch
 2. Crea un archivo con extensión `.gabo`
 3. El resaltado, autocompletado y diagnósticos funcionan automáticamente
 4. Para formatear: `Ctrl+Shift+I` (Windows/Linux) o `Cmd+Shift+I` (Mac)
-5. Para exportar a DOCX: haz clic derecho en un archivo `.gabo` o carpeta
+5. Para exportar a DOCX: haz clic derecho en un archivo `.gabo` o carpeta -->
 
 ---
 
@@ -97,4 +97,4 @@ Las contribuciones son bienvenidas. Revisa la [guía de contribución](docs/CONT
 
 ## Licencia
 
-[Mozilla Public License 2.0](LICENSE)
+[MIT](LICENSE)
