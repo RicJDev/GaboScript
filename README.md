@@ -5,12 +5,9 @@
 <h1 align="center">GaboScript para VS Code</h1>
 
 <p align="center">
-  <!-- <a href="https://marketplace.visualstudio.com/items?itemName=Las-Nuevas-Victimas-De-Elecentro.gaboscript">
-    <img src="https://img.shields.io/visual-studio-marketplace/v/Las-Nuevas-Victimas-De-Elecentro.gaboscript?label=VS%20Marketplace&logo=visualstudiocode" alt="VS Marketplace">
-  </a> -->
-  <!-- <a href="https://open-vsx.org/extension/Las-Nuevas-Victimas-De-Elecentro/gaboscript">
-    <img src="https://img.shields.io/open-vsx/v/Las-Nuevas-Victimas-De-Elecentro/gaboscript?label=OpenVSX&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEuNjEgMjEuNTlhMS45OCAxLjk4IDAgMCAwIDIuNzggMGw3LjQ0LTcuNDNhMiAyIDAgMCAwIDAtMi44MkwxNC4zOSAzLjkxYTIgMiAwIDAgMC0yLjc4IDBsLTcuNDQgNy40M2EyIDIgMCAwIDAgMCAyLjgzeiIgZmlsbD0iIzI4NTVGRiIvPjwvc3ZnPg==" alt="OpenVSX">
-  </a> -->
+  <a href="https://github.com/RicJDev/GaboScript/releases">
+    <img src="https://img.shields.io/github/v/release/RicJDev/GaboScript?label=Release&logo=github" alt="GitHub Release">
+  </a>
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
   </a>
@@ -23,8 +20,6 @@
   Soporte completo para el lenguaje de programación <strong>GaboScript</strong> en VS Code.<br>
   Diseñado para la materia de <strong>Algoritmos</strong> de la universidad, con una sintaxis pensada para el aprendizaje.
 </p>
-
----
 
 ## Características
 
@@ -68,24 +63,25 @@ Comparte tu código en formato documento exportando la carpeta de trabajo o arch
 - **Exportar archivos seleccionados** desde el menú contextual del explorador
 - **Exportar archivo activo** desde el menú del editor
 
----
-
 ## Requisitos
 
 - VS Code ^1.105.0
 - No requiere dependencias externas ni runtime
 
-## <!--
-
 ## Cómo usar
 
-1. Instala la extensión desde el [Marketplace](https://marketplace.visualstudio.com/items?itemName=Las-Nuevas-Victimas-De-Elecentro.gaboscript) o [OpenVSX](https://open-vsx.org/extension/Las-Nuevas-Victimas-De-Elecentro/gaboscript)
-2. Crea un archivo con extensión `.gabo`
-3. El resaltado, autocompletado y diagnósticos funcionan automáticamente
-4. Para formatear: `Ctrl+Shift+I` (Windows/Linux) o `Cmd+Shift+I` (Mac)
-5. Para exportar a DOCX: haz clic derecho en un archivo `.gabo` o carpeta -->
+### Instalación
 
----
+1. Descarga el archivo `.vsix` de la [última release](https://github.com/RicJDev/GaboScript/releases)
+2. En VS Code, abre la paleta de comandos (`Ctrl+Shift+P`) y ejecuta **Extensions: Install from VSIX**
+3. Selecciona el archivo descargado
+
+### Uso
+
+1. Crea un archivo con extensión `.gabo`
+2. El resaltado, autocompletado y diagnósticos funcionan automáticamente
+3. Para formatear: `Ctrl+Shift+I` (Windows/Linux) o `Cmd+Shift+I` (Mac)
+4. Para exportar a DOCX desde el menú contextual del explorador o editor
 
 ## Roadmap
 
