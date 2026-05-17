@@ -1,6 +1,6 @@
-import * as vscode from 'vscode';
+import { CompletionItemKind } from 'vscode';
 
 export interface KeywordEntry {
   text: string;
-  kind: vscode.CompletionItemKind;
+  kind: CompletionItemKind;
 }

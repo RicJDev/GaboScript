@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import { Uri, window, workspace } from 'vscode';
 import { join } from 'node:path';
 import { createWriteStream } from 'node:fs';
 import { readFile, unlink } from 'node:fs/promises';
@@ -7,13 +7,13 @@ import { createDoc } from './createDocx';
 import { deriveOutputName, collectGaboFiles } from './fileUtils';
 
 export async function generateDOCX(
-  uri?: vscode.Uri,
-  selectedUris?: vscode.Uri[],
+  uri?: Uri,
+  selectedUris?: Uri[],
 ): Promise<void> {
-  const folders = vscode.workspace.workspaceFolders;
+  const folders = workspace.workspaceFolders;
 
   if (!folders || folders.length === 0) {
-    vscode.window.showErrorMessage('No hay una carpeta de trabajo abierta');
+    window.showErrorMessage('No hay una carpeta de trabajo abierta');
     return;
   }
 
@@ -53,7 +53,7 @@ export async function generateDOCX(
     await createDoc(fileContent, newFilePath);
     await unlink(tempFile);
   } catch (error) {
-    vscode.window.showErrorMessage(
+    window.showErrorMessage(
       `Error en el proceso de exportación: ${(error as Error).message}`,
     );
     try {

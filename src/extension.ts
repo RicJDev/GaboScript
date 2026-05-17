@@ -1,52 +1,57 @@
-import * as vscode from 'vscode';
+import {
+  commands,
+  DiagnosticCollection,
+  ExtensionContext,
+  languages,
+  TextDocument,
+  window,
+  workspace,
+} from 'vscode';
 import { generateDOCX } from './generateDOCX';
 import { WordsProvider } from './WordsProvider';
-import { SyntaxProvider } from './SyntaxProvider';
+import { GaboScriptSyntaxProvider } from './GaboScriptSyntaxProvider';
 import { GaboScriptFormatter } from './GaboScriptFormatter';
 import { createDiagnostics } from './GaboScriptDiagnostics';
 
-let diagnosticCollection: vscode.DiagnosticCollection | undefined;
+let diagnosticCollection: DiagnosticCollection | undefined;
 
-export function activate(context: vscode.ExtensionContext) {
-  const exportDocxDisposable = vscode.commands.registerCommand(
+export function activate(context: ExtensionContext) {
+  const exportDocxDisposable = commands.registerCommand(
     'gaboscript.exportarADOCX',
     generateDOCX,
   );
 
-  const words = vscode.languages.registerCompletionItemProvider(
+  const words = languages.registerCompletionItemProvider(
     'gaboscript',
     new WordsProvider(),
   );
 
-  const syntax = vscode.languages.registerCompletionItemProvider(
+  const syntax = languages.registerCompletionItemProvider(
     'gaboscript',
-    new SyntaxProvider(),
+    new GaboScriptSyntaxProvider(),
   );
 
-  const formatter = vscode.languages.registerDocumentFormattingEditProvider(
+  const formatter = languages.registerDocumentFormattingEditProvider(
     'gaboscript',
     new GaboScriptFormatter(),
   );
 
-  diagnosticCollection =
-    vscode.languages.createDiagnosticCollection('gaboscript');
+  diagnosticCollection = languages.createDiagnosticCollection('gaboscript');
   context.subscriptions.push(diagnosticCollection);
 
-  const diagnosticRefresh = (document: vscode.TextDocument) => {
+  const diagnosticRefresh = (document: TextDocument) => {
     if (document.languageId === 'gaboscript' && diagnosticCollection) {
       createDiagnostics(document, diagnosticCollection);
     }
   };
 
   context.subscriptions.push(
-    vscode.workspace.onDidOpenTextDocument(diagnosticRefresh),
-    vscode.workspace.onDidChangeTextDocument((e) =>
-      diagnosticRefresh(e.document),
-    ),
+    workspace.onDidOpenTextDocument(diagnosticRefresh),
+    workspace.onDidChangeTextDocument((e) => diagnosticRefresh(e.document)),
   );
 
-  if (vscode.window.activeTextEditor) {
-    diagnosticRefresh(vscode.window.activeTextEditor.document);
+  if (window.activeTextEditor) {
+    diagnosticRefresh(window.activeTextEditor.document);
   }
 
   context.subscriptions.push(exportDocxDisposable, words, syntax, formatter);

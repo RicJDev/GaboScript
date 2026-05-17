@@ -1,4 +1,10 @@
-import * as vscode from 'vscode';
+import {
+  Diagnostic,
+  DiagnosticCollection,
+  DiagnosticSeverity,
+  Range,
+  TextDocument,
+} from 'vscode';
 
 const BLOCK_KEYWORDS: Record<string, string> = {
   Algoritmo: 'Fin',

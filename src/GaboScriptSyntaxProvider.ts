@@ -1,17 +1,24 @@
-import * as vscode from 'vscode';
+import {
+  CancellationToken,
+  CompletionContext,
+  CompletionItem,
+  CompletionItemProvider,
+  CompletionList,
+  Position,
+  ProviderResult,
+  TextDocument,
+} from 'vscode';
 import { syntaxKeywords } from './keywords';
 
-export class SyntaxProvider implements vscode.CompletionItemProvider<vscode.CompletionItem> {
+export class GaboScriptSyntaxProvider implements CompletionItemProvider<CompletionItem> {
   provideCompletionItems(
-    _document: vscode.TextDocument,
-    _position: vscode.Position,
-    _token: vscode.CancellationToken,
-    _context: vscode.CompletionContext,
-  ): vscode.ProviderResult<
-    vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>
-  > {
+    _document: TextDocument,
+    _position: Position,
+    _token: CancellationToken,
+    _context: CompletionContext,
+  ): ProviderResult<CompletionItem[] | CompletionList<CompletionItem>> {
     return syntaxKeywords.map(({ text, kind }) => {
-      return new vscode.CompletionItem(text, kind);
+      return new CompletionItem(text, kind);
     });
   }
 }

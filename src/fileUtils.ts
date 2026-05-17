@@ -1,12 +1,9 @@
-import * as vscode from 'vscode';
-import { basename, extname, join } from 'node:path';
+import { FileType, Uri, workspace } from 'vscode';
+import { basename, extname } from 'node:path';
 import { globSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 
-export function deriveOutputName(
-  target: vscode.Uri,
-  targets: vscode.Uri[],
-): string {
+export function deriveOutputName(_: Uri, targets: Uri[]): string {
   if (
     targets.length === 1 &&
     targets[0].scheme !== 'untitled' &&
@@ -20,19 +17,19 @@ export function deriveOutputName(
 }
 
 export async function collectGaboFiles(
-  targets: vscode.Uri[] | undefined,
+  targets: Uri[] | undefined,
   currentDir: string,
 ): Promise<string> {
   const parts: string[] = [];
 
   if (targets && targets.length > 0) {
     for (const target of targets) {
-      const stat = await vscode.workspace.fs.stat(target);
-      if (stat.type === vscode.FileType.File) {
-        const buffer = await vscode.workspace.fs.readFile(target);
-        const content = (await vscode.workspace.decode(buffer)) as string;
+      const stat = await workspace.fs.stat(target);
+      if (stat.type === FileType.File) {
+        const buffer = await workspace.fs.readFile(target);
+        const content = (await workspace.decode(buffer)) as string;
         parts.push(content);
-      } else if (stat.type === vscode.FileType.Directory) {
+      } else if (stat.type === FileType.Directory) {
         const files = globSync(`${target.fsPath}/**/*.gabo`);
         for (const file of files) {
           const content = await readFile(file, 'utf-8');

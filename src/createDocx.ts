@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import { window } from 'vscode';
 import { writeFileSync } from 'node:fs';
 import { basename } from 'node:path';
 import { Document, Packer, Paragraph, TextRun, LineRuleType } from 'docx';
@@ -34,11 +34,11 @@ export async function createDoc(
     const buffer = await Packer.toBuffer(doc);
     writeFileSync(outputPath, buffer);
 
-    vscode.window.showInformationMessage(
+    window.showInformationMessage(
       `¡Código GaboScript exportado con éxito a DOCX: ${basename(outputPath)}`,
     );
   } catch (error) {
-    vscode.window.showErrorMessage(
+    window.showErrorMessage(
       `Error al generar el archivo DOCX: ${(error as Error).message}`,
     );
   }

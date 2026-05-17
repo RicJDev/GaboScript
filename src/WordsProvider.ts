@@ -1,15 +1,23 @@
-import * as vscode from 'vscode';
+import {
+  CancellationToken,
+  CompletionContext,
+  CompletionItem,
+  CompletionItemKind,
+  CompletionItemProvider,
+  CompletionList,
+  Position,
+  ProviderResult,
+  TextDocument,
+} from 'vscode';
 import { syntaxKeywords } from './keywords';
 
-export class WordsProvider implements vscode.CompletionItemProvider<vscode.CompletionItem> {
+export class WordsProvider implements CompletionItemProvider<CompletionItem> {
   provideCompletionItems(
-    document: vscode.TextDocument,
-    _position: vscode.Position,
-    _token: vscode.CancellationToken,
-    _context: vscode.CompletionContext,
-  ): vscode.ProviderResult<
-    vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>
-  > {
+    document: TextDocument,
+    _position: Position,
+    _token: CancellationToken,
+    _context: CompletionContext,
+  ): ProviderResult<CompletionItem[] | CompletionList<CompletionItem>> {
     const regex = /\b[a-zA-Z_][a-zA-Z0-9_]*\b/gi;
     const text = document.getText();
     const matches = text.match(regex) ?? [];
@@ -21,7 +29,7 @@ export class WordsProvider implements vscode.CompletionItemProvider<vscode.Compl
     });
 
     return words.map((word) => {
-      return new vscode.CompletionItem(word, vscode.CompletionItemKind.Text);
+      return new CompletionItem(word, CompletionItemKind.Text);
     });
   }
 }

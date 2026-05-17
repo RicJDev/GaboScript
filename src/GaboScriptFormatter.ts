@@ -1,4 +1,10 @@
-import * as vscode from 'vscode';
+import {
+  DocumentFormattingEditProvider,
+  FormattingOptions,
+  Range,
+  TextDocument,
+  TextEdit,
+} from 'vscode';
 
 const INDENT_KEYWORDS = [
   // 'Algoritmo',
@@ -30,17 +36,14 @@ const DEDENT_KEYWORDS = [
   'Sino',
 ];
 
-export class GaboScriptFormatter
-  implements vscode.DocumentFormattingEditProvider
-{
+export class GaboScriptFormatter implements DocumentFormattingEditProvider {
   provideDocumentFormattingEdits(
-    document: vscode.TextDocument,
-    _options: vscode.FormattingOptions,
-    _token: vscode.CancellationToken,
-  ): vscode.TextEdit[] {
-    const edits: vscode.TextEdit[] = [];
-    const tabSize = _options.tabSize || 4;
-    const indentChar = _options.insertSpaces ? ' '.repeat(tabSize) : '\t';
+    document: TextDocument,
+    options: FormattingOptions,
+  ): TextEdit[] {
+    const edits: TextEdit[] = [];
+    const tabSize = options.tabSize || 4;
+    const indentChar = options.insertSpaces ? ' '.repeat(tabSize) : '\t';
     const lines = document.getText().split('\n');
     const result: string[] = [];
     let indentLevel = 0;
@@ -63,8 +66,8 @@ export class GaboScriptFormatter
 
     const formatted = result.join('\n');
     if (formatted !== document.getText()) {
-      const fullRange = new vscode.Range(0, 0, document.lineCount, 0);
-      edits.push(new vscode.TextEdit(fullRange, formatted));
+      const fullRange = new Range(0, 0, document.lineCount, 0);
+      edits.push(new TextEdit(fullRange, formatted));
     }
 
     return edits;
