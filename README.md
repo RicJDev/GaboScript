@@ -5,9 +5,9 @@
 <h1 align="center">GaboScript para VS Code</h1>
 
 <p align="center">
-  <a href="https://github.com/RicJDev/GaboScript/releases">
+  <!-- <a href="https://github.com/RicJDev/GaboScript/releases">
     <img src="https://img.shields.io/github/v/release/RicJDev/GaboScript?label=Release&logo=github" alt="GitHub Release">
-  </a>
+  </a> -->
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
   </a>
