@@ -1,7 +1,7 @@
 import { CompletionItemKind } from 'vscode';
-import type { KeywordEntry } from './types';
+import type { KeywordEntry } from '../types';
 
-export const syntaxKeywords: KeywordEntry[] = [
+export const keywords: KeywordEntry[] = [
   { text: 'Algoritmo', kind: CompletionItemKind.Keyword },
   { text: 'Inicio', kind: CompletionItemKind.Keyword },
   { text: 'Registro', kind: CompletionItemKind.Keyword },

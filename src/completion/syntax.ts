@@ -8,16 +8,16 @@ import {
   ProviderResult,
   TextDocument,
 } from 'vscode';
-import { syntaxKeywords } from './keywords';
+import { keywords } from './keywords';
 
-export class GaboScriptSyntaxProvider implements CompletionItemProvider<CompletionItem> {
+export class SyntaxProvider implements CompletionItemProvider<CompletionItem> {
   provideCompletionItems(
     _document: TextDocument,
     _position: Position,
     _token: CancellationToken,
     _context: CompletionContext,
   ): ProviderResult<CompletionItem[] | CompletionList<CompletionItem>> {
-    return syntaxKeywords.map(({ text, kind }) => {
+    return keywords.map(({ text, kind }) => {
       return new CompletionItem(text, kind);
     });
   }

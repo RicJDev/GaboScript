@@ -9,7 +9,7 @@ import {
   ProviderResult,
   TextDocument,
 } from 'vscode';
-import { syntaxKeywords } from './keywords';
+import { keywords } from './keywords';
 
 export class WordsProvider implements CompletionItemProvider<CompletionItem> {
   provideCompletionItems(
@@ -22,7 +22,7 @@ export class WordsProvider implements CompletionItemProvider<CompletionItem> {
     const text = document.getText();
     const matches = text.match(regex) ?? [];
     const words = [...new Set(matches)].filter((word) => {
-      for (const { text } of syntaxKeywords) {
+      for (const { text } of keywords) {
         if (word?.toLowerCase() === text.toLowerCase()) return false;
       }
       return true;

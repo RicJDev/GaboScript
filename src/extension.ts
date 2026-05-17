@@ -4,10 +4,10 @@ import {
   ExtensionContext,
   languages,
 } from 'vscode';
-import { generateDOCX } from './generateDOCX';
-import { WordsProvider } from './WordsProvider';
-import { GaboScriptSyntaxProvider } from './GaboScriptSyntaxProvider';
-import { GaboScriptFormatter } from './GaboScriptFormatter';
+import { generateDOCX } from './export/generate';
+import { WordsProvider } from './completion/words';
+import { SyntaxProvider } from './completion/syntax';
+import { GaboScriptFormatter } from './formatting/formatter';
 
 let diagnosticCollection: DiagnosticCollection | undefined;
 
@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 
   const syntax = languages.registerCompletionItemProvider(
     'gaboscript',
-    new GaboScriptSyntaxProvider(),
+    new SyntaxProvider(),
   );
 
   const formatter = languages.registerDocumentFormattingEditProvider(
