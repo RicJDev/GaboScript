@@ -1,0 +1,52 @@
+name: Publicar VSIX en Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: Generar archivo .vsix
+        run: pnpm run package
+
+      - name: Extraer notas de la versión actual
+        run: |
+          TAG_VERSION="${{ github.ref_name }}"
+          awk -v ver="${TAG_VERSION#v}" '
+            /^## \[/ { if (p) { exit }; if ($2 == "["ver"]") { p=1; next } }
+            p
+          ' CHANGELOG.md > release-notes.md
+
+      - name: Crear Release y subir .vsix
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body_path: release-notes.md
+          files: |
+            *.vsix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
