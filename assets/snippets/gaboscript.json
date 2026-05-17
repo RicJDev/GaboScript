@@ -118,7 +118,7 @@
   "Variable": {
     "prefix": "Variable",
     "body": ["Var ${1:dame_nombre}: ${2:Entero};"],
-    "description": "Declaración de variable."
+    "description": "Declaración de una variable."
   },
   "Validacion": {
     "prefix": "Validacion",
@@ -132,14 +132,14 @@
   },
   "Vector": {
     "prefix": "Vector",
-    "body": ["var ${1:vector}[${2:n}]: ${3:Entero};", "var ${2:n}: Entero;"],
+    "body": ["Var ${1:vector}[${2:n}]: ${3:Entero};", "Var ${2:n}: Entero;"],
     "description": "Arreglo de una dimensión (Vector)"
   },
   "Matriz": {
     "prefix": "Matriz",
     "body": [
-      "var ${1:matriz}[${2:n}][${3:m}]: ${4:Entero};",
-      "var ${2:n}, ${3:m}: Entero;"
+      "Var ${1:matriz}[${2:n}][${3:m}]: ${4:Entero};",
+      "Var ${2:n}, ${3:m}: Entero;"
     ],
     "description": "Arreglo de dos dimensiones (Matriz)"
   }
