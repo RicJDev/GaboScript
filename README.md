@@ -39,6 +39,7 @@ Plantillas para todas las estructuras principales. Escribe el prefijo y presiona
 
 `Algoritmo`, `Si-entonces`, `Si-Sino`, `Para-hacer`, `Mientras-hacer`, `Repetir-hasta`, `En_Caso-sea`, `Procedimiento`, `Funcion`, `Registro`, `Variable`, y más.
 
+<!--
 ### Diagnósticos en tiempo real
 
 La extensión valiva la estructura de tu código mientras escribes:
@@ -46,6 +47,7 @@ La extensión valiva la estructura de tu código mientras escribes:
 - **Bloques sin cerrar:** detecta `Si`, `Mientras`, `Para`, etc. que no tienen su `Fin_*` correspondiente
 - **Cierre incorrecto:** avisa si cerraste un bloque con el `Fin_*` equivocado
 - **Cierre sin apertura:** detecta `Fin_*` que no tienen bloque correspondiente
+ -->
 
 ### Formateo automático
 
@@ -63,11 +65,6 @@ Comparte tu código en formato documento exportando la carpeta de trabajo o arch
 - **Exportar archivos seleccionados** desde el menú contextual del explorador
 - **Exportar archivo activo** desde el menú del editor
 
-## Requisitos
-
-- VS Code ^1.105.0
-- No requiere dependencias externas ni runtime
-
 ## Cómo usar
 
 ### Instalación
@@ -82,6 +79,11 @@ Comparte tu código en formato documento exportando la carpeta de trabajo o arch
 2. El resaltado, autocompletado y diagnósticos funcionan automáticamente
 3. Para formatear: `Ctrl+Shift+I` (Windows/Linux) o `Cmd+Shift+I` (Mac)
 4. Para exportar a DOCX desde el menú contextual del explorador o editor
+
+## Requisitos
+
+- VS Code ^1.105.0
+- No requiere dependencias externas ni runtime
 
 ## Roadmap
 

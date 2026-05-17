@@ -2,20 +2,16 @@
 
 > Línea de tiempo del desarrollo de la extensión GaboScript para VS Code.
 
----
+La presente Roadmap es conceptual y está sujeta a cambios.
 
 ## v0.1.0 — Migración y sentando bases
 
 > **Estado:** ✅ Completado
 
-- Migración del proyecto a TypeScript
-- Reestructuración de directorios (`src/`, `assets/`)
-- Diagnósticos básicos: validación de apertura/cierre de bloques
-- Formateo automático: indentación basada en keywords
-- Exportación a DOCX funcional
-- Publicación inicial en VS Code Marketplace y OpenVSX
-
----
+- [x] Migración del proyecto a TypeScript
+- [x] Reestructuración de directorios (`src/`, `assets/`)
+- [x] Formateo automático: indentación basada en keywords
+- [x] Exportación a DOCX funcional
 
 ## v0.2.0 — Autocompletado y productividad
 
@@ -23,6 +19,7 @@
 
 ### Autocompletado inteligente
 
+- [ ] Diagnósticos básicos: validación de apertura/cierre de bloques
 - [ ] Completado de palabras del documento (variables, identificadores)
 - [ ] Completado de campos de registros al escribir `.` después de una variable de tipo registro
 - [ ] Snippets pulidos con mejor contexto y tabulación
@@ -37,8 +34,6 @@
 
 - [ ] Pruebas unitarias para los providers
 - [ ] Pruebas de integración para diagnósticos y formateo
-
----
 
 ## v0.3.0 — Diagnósticos y editor
 
@@ -66,8 +61,6 @@
 - [ ] GitHub Actions: build + test automático
 - [ ] Publicación automática a Marketplace + OpenVSX
 
----
-
 ## v0.4.0 — Exportación experimental
 
 > **Estado:** 📋 Planificado — _Estimado: próximo semestre_
@@ -84,8 +77,6 @@
 - [ ] CodeLens: mostrar cantidad de líneas por bloque
 - [ ] Mejoras de performance en archivos grandes
 
----
-
 ## v1.0.0 — Producción
 
 > **Estado:** 📋 Planificado — _Sin fecha estimada_
@@ -98,8 +89,6 @@
 - [ ] Documentación completa para usuarios y contribuidores
 - [ ] README con GIFs demostrativos y screenshots
 - [ ] Publicación estable en Marketplace + OpenVSX
-
----
 
 ## Futuro (post-v1.0)
 
