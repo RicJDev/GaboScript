@@ -22,10 +22,10 @@ const BLOCK_STARTERS = Object.keys(BLOCK_KEYWORDS);
 const BLOCK_ENDERS = Object.values(BLOCK_KEYWORDS);
 
 export function createDiagnostics(
-  doc: vscode.TextDocument,
-  collection: vscode.DiagnosticCollection,
+  doc: TextDocument,
+  collection: DiagnosticCollection,
 ): void {
-  const diagnostics: vscode.Diagnostic[] = [];
+  const diagnostics: Diagnostic[] = [];
   const lines = doc.getText().split('\n');
   const stack: { keyword: string; line: number }[] = [];
 
@@ -41,17 +41,17 @@ export function createDiagnostics(
     if (BLOCK_ENDERS.includes(firstWord)) {
       if (stack.length === 0) {
         diagnostics.push({
-          severity: vscode.DiagnosticSeverity.Error,
+          severity: DiagnosticSeverity.Error,
           message: `${firstWord} sin bloque correspondiente`,
-          range: new vscode.Range(i, 0, i, line.length),
+          range: new Range(i, 0, i, line.length),
         });
       } else {
         const expected = BLOCK_KEYWORDS[stack[stack.length - 1].keyword];
         if (firstWord !== expected) {
           diagnostics.push({
-            severity: vscode.DiagnosticSeverity.Error,
+            severity: DiagnosticSeverity.Error,
             message: `Se esperaba '${expected}' pero se encontró '${firstWord}'`,
-            range: new vscode.Range(i, 0, i, line.length),
+            range: new Range(i, 0, i, line.length),
           });
         }
         stack.pop();
@@ -62,9 +62,9 @@ export function createDiagnostics(
   while (stack.length > 0) {
     const unclosed = stack.pop()!;
     diagnostics.push({
-      severity: vscode.DiagnosticSeverity.Warning,
+      severity: DiagnosticSeverity.Warning,
       message: `Bloque '${unclosed.keyword}' sin cerrar`,
-      range: new vscode.Range(
+      range: new Range(
         unclosed.line,
         0,
         unclosed.line,
